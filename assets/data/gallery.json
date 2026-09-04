@@ -1,19 +1,19 @@
 [
   {
-    "id": "photo-1",
-    "title": "Sunbeams through Mountain Mist",
+    "id": "photo-01",
+    "title": "Hazy Rural Evening Landscape in Golden Light",
     "category": "golden-hour",
-    "categoryLabel": "Golden Hour & Light",
-    "image": "assets/img/gallery/golden_hour_mist.jpg",
+    "categoryLabel": "Golden & Blue Hour",
+    "image": "assets/img/gallery/37622114-hazy-rural-evening-landscape-with-golden-light.jpg",
     "aspect": "3:2",
-    "location": "Bavarian Alpine Foothills, Germany",
-    "caption": "Early morning golden hour sunbeams radiating through dense pine forest fog, illuminating rolling mountain ridges.",
+    "location": "Central European Countryside",
+    "caption": "Rolling green hills bathed in radiant golden hour sunbeams with a solitary tree silhouette piercing soft evening haze.",
     "exif": {
-      "camera": "Sony Alpha 7R IV",
-      "lens": "FE 24-70mm F2.8 GM",
-      "focal": "45mm",
-      "aperture": "f/8.0",
-      "shutter": "1/250s",
+      "camera": "Pentax K-3",
+      "lens": "SMC PENTAX-DA 50mm F1.8",
+      "focal": "50mm",
+      "aperture": "f/4.0",
+      "shutter": "1/160s",
       "iso": "100"
     },
     "licensing": {
@@ -23,21 +23,21 @@
     }
   },
   {
-    "id": "photo-2",
-    "title": "Geometric Modern Steel & Glass Pavilion",
-    "category": "architecture",
-    "categoryLabel": "Architecture & Design",
-    "image": "assets/img/gallery/architecture_modern.jpg",
+    "id": "photo-02",
+    "title": "Golden Gate Bridge & City Skyline at Twilight",
+    "category": "urban-travel",
+    "categoryLabel": "Urban & Architecture",
+    "image": "assets/img/gallery/IMGP7909.jpg",
     "aspect": "3:2",
-    "location": "Frankfurt am Main, Germany",
-    "caption": "Minimalist architectural study capturing geometric cross-braced steel structures and warm interior illumination against blue hour dusk.",
+    "location": "San Francisco Bay, California, USA",
+    "caption": "The iconic orange-vermilion suspension tower of the Golden Gate Bridge framing illuminated downtown San Francisco skyscrapers during deep blue hour.",
     "exif": {
-      "camera": "Sony Alpha 7R IV",
-      "lens": "FE 16-35mm F2.8 GM",
-      "focal": "21mm",
-      "aperture": "f/11",
-      "shutter": "4.0s",
-      "iso": "50"
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 16-85mm F3.5-5.6 ED DC WR",
+      "focal": "43mm",
+      "aperture": "f/3.5",
+      "shutter": "1/30s",
+      "iso": "2500"
     },
     "licensing": {
       "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
@@ -46,19 +46,180 @@
     }
   },
   {
-    "id": "photo-3",
-    "title": "Industrial Steel Piping & Telemetry Valves",
-    "category": "industrial",
-    "categoryLabel": "Industrial & Tech",
-    "image": "assets/img/gallery/industrial_steel.jpg",
-    "aspect": "3:2",
-    "location": "Ruhr Valley Industrial Complex, Germany",
-    "caption": "Complex industrial piping networks with analog pressure gauges and gate valves under dramatic tungsten overhead lamps.",
+    "id": "photo-03",
+    "title": "Dreiländereck Tripoint — Germany, Poland & Czechia",
+    "category": "landscapes-aerial",
+    "categoryLabel": "Landscapes & Drone",
+    "image": "assets/img/gallery/DJI_0002.jpg",
+    "aspect": "4:3",
+    "location": "Zittau Tri-Border Confluence, Central Europe",
+    "caption": "Overhead drone aerial capturing the river tripoint where the national borders of Germany, Poland, and the Czech Republic meet, marked by three flags.",
     "exif": {
-      "camera": "Sony Alpha 7R IV",
-      "lens": "FE 35mm F1.4 GM",
-      "focal": "35mm",
+      "camera": "DJI Drone (FC7303)",
+      "lens": "DJI 24mm F2.8 Integrated",
+      "focal": "24mm equiv",
+      "aperture": "f/2.8",
+      "shutter": "1/240s",
+      "iso": "100"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-04",
+    "title": "Highland Blackface Ram Portrait",
+    "category": "nature-wildlife",
+    "categoryLabel": "Nature & Wildlife",
+    "image": "assets/img/gallery/IMGP7812-Edit.jpg",
+    "aspect": "3:2",
+    "location": "Coastal Island Pastures",
+    "caption": "Detailed telephoto study of a majestic Scottish Blackface ram with spiraling horns and weathered fleece standing resolute against coastal winds.",
+    "exif": {
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 55-300mm ED PLM WR RE",
+      "focal": "300mm",
+      "aperture": "f/6.3",
+      "shutter": "1/400s",
+      "iso": "125"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-05",
+    "title": "Pacific Ocean Twilight & Marin Coastal Bluff",
+    "category": "golden-hour",
+    "categoryLabel": "Golden & Blue Hour",
+    "image": "assets/img/gallery/IMGP7882.jpg",
+    "aspect": "3:2",
+    "location": "Point Bonita, Marin Headlands, California",
+    "caption": "Golden sunset horizon meeting coastal bluffs and historic Pacific lookout shelters along the Marin coastline outside the Golden Gate strait.",
+    "exif": {
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 16-85mm F3.5-5.6 ED DC WR",
+      "focal": "39mm",
+      "aperture": "f/5.6",
+      "shutter": "1/500s",
+      "iso": "320"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-06",
+    "title": "Sendagaya Twilight Flyover & Metropolis Glow",
+    "category": "urban-travel",
+    "categoryLabel": "Urban & Architecture",
+    "image": "assets/img/gallery/IMGP4404.jpg",
+    "aspect": "3:2",
+    "location": "Sendagaya, Shibuya, Tokyo, Japan",
+    "caption": "Multi-tier Tokyo expressway overpass and overhead gantry signage cutting across high-density urban apartments in neon evening twilight.",
+    "exif": {
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 16-85mm F3.5-5.6 ED DC WR",
+      "focal": "58mm",
       "aperture": "f/4.0",
+      "shutter": "1/125s",
+      "iso": "5000"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-07",
+    "title": "Geometric Circular Arboretum & Radial Pathways",
+    "category": "landscapes-aerial",
+    "categoryLabel": "Landscapes & Drone",
+    "image": "assets/img/gallery/DJI_0092.jpg",
+    "aspect": "4:3",
+    "location": "European Botanical Park",
+    "caption": "Top-down drone photograph highlighting geometric circular hedge mazes, central floral sculptures, and tree-lined radial walking avenues.",
+    "exif": {
+      "camera": "DJI Drone (FC7303)",
+      "lens": "DJI 24mm F2.8 Integrated",
+      "focal": "24mm equiv",
+      "aperture": "f/2.8",
+      "shutter": "1/40s",
+      "iso": "100"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-08",
+    "title": "Sea Thrift & Guillemots on Atlantic Cliffs",
+    "category": "nature-wildlife",
+    "categoryLabel": "Nature & Wildlife",
+    "image": "assets/img/gallery/IMGP7489.jpg",
+    "aspect": "3:2",
+    "location": "Coastal Seabird Reserve",
+    "caption": "Vibrant pink sea thrift (Armeria maritima) blossoms lining dizzying precipices where common guillemot seabirds roost above crashing ocean breakers.",
+    "exif": {
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 55-300mm ED PLM WR RE",
+      "focal": "190mm",
+      "aperture": "f/7.1",
+      "shutter": "1/1250s",
+      "iso": "500"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-09",
+    "title": "Pasture Fence Posts in Warm Sunset Glow",
+    "category": "golden-hour",
+    "categoryLabel": "Golden & Blue Hour",
+    "image": "assets/img/gallery/37624607-fence-posts-and-wire-fence-in-golden-hour-sunset-light.jpg",
+    "aspect": "3:2",
+    "location": "Rural Farmland Pastures",
+    "caption": "Telephoto composition emphasizing the warm texture of weathered oak fence posts and taut boundary wire illuminated by late afternoon sun.",
+    "exif": {
+      "camera": "Pentax K-3",
+      "lens": "HD PENTAX-DA 55-300mm ED PLM WR RE",
+      "focal": "125mm",
+      "aperture": "f/9.0",
+      "shutter": "1/100s",
+      "iso": "100"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-10",
+    "title": "Charging Bull at Dawn — Wall Street",
+    "category": "urban-travel",
+    "categoryLabel": "Urban & Architecture",
+    "image": "assets/img/gallery/2022-04-12_06-14-16_232.jpg",
+    "aspect": "3:2",
+    "location": "Bowling Green, Lower Manhattan, New York City",
+    "caption": "Arturo Di Modica's iconic bronze Charging Bull sculpture captured at early dawn in an empty Financial District street.",
+    "exif": {
+      "camera": "Pentax K-3",
+      "lens": "SMC PENTAX-DA Wide Zoom",
+      "focal": "28mm",
+      "aperture": "f/4.5",
       "shutter": "1/60s",
       "iso": "400"
     },
@@ -69,21 +230,205 @@
     }
   },
   {
-    "id": "photo-4",
-    "title": "Blue Hour Coastal Beacon & Swirling Tides",
-    "category": "golden-hour",
-    "categoryLabel": "Golden Hour & Light",
-    "image": "assets/img/gallery/blue_hour_seascape.jpg",
+    "id": "photo-11",
+    "title": "Alpine Ridges in Morning Alpenglow",
+    "category": "landscapes-aerial",
+    "categoryLabel": "Landscapes & Drone",
+    "image": "assets/img/gallery/IMGP2122.jpg",
     "aspect": "3:2",
-    "location": "Brittany Atlantic Coast",
-    "caption": "Long exposure capturing misty ocean waves cascading across granite reefs below a glowing lighthouse in twilight.",
+    "location": "Central Alps Mountain Range",
+    "caption": "Sharp craggy mountain massifs catching the first rays of morning light, contrasting against deep violet shadows across high-altitude scree fields.",
     "exif": {
-      "camera": "Sony Alpha 7R IV",
-      "lens": "FE 16-35mm F2.8 GM",
-      "focal": "18mm",
-      "aperture": "f/13",
-      "shutter": "15.0s",
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 16-85mm F3.5-5.6 ED DC WR",
+      "focal": "17mm",
+      "aperture": "f/5.0",
+      "shutter": "1/100s",
+      "iso": "160"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-12",
+    "title": "Misty Crimson Dawn & Solitary Swan",
+    "category": "golden-hour",
+    "categoryLabel": "Golden & Blue Hour",
+    "image": "assets/img/gallery/IMG_3316.jpg",
+    "aspect": "4:3",
+    "location": "River Valley Mist Sanctuary",
+    "caption": "Mute swan drifting across tranquil river waters illuminated by a fiery scarlet sunrise with church spire silhouette emerging through dense river fog.",
+    "exif": {
+      "camera": "Apple iPhone 12 Pro",
+      "lens": "iPhone 12 Pro Wide 26mm",
+      "focal": "26mm equiv",
+      "aperture": "f/2.0",
+      "shutter": "1/1776s",
+      "iso": "25"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-13",
+    "title": "Chinatown Fresh Seafood Market Bustle",
+    "category": "urban-travel",
+    "categoryLabel": "Urban & Architecture",
+    "image": "assets/img/gallery/2022-04-09_18-23-20_861.jpg",
+    "aspect": "3:2",
+    "location": "Mott Street, Chinatown, New York City",
+    "caption": "Vibrant street market stall in Chinatown bustling with evening shoppers beneath glowing signs and iced displays of fresh Atlantic fish.",
+    "exif": {
+      "camera": "Pentax K-3",
+      "lens": "SMC PENTAX-DA 35mm F2.8 Macro Limited",
+      "focal": "35mm",
+      "aperture": "f/2.8",
+      "shutter": "1/125s",
+      "iso": "800"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-14",
+    "title": "Eastern Gray Squirrel Foraging in Autumn",
+    "category": "nature-wildlife",
+    "categoryLabel": "Nature & Wildlife",
+    "image": "assets/img/gallery/2022-04-09_13-42-14_892.jpg",
+    "aspect": "3:2",
+    "location": "Central Park Woodlands, New York City",
+    "caption": "Eastern gray squirrel (Sciurus carolinensis) pausing intently among dry forest leaves, captured with creamy bokeh and natural ambient lighting.",
+    "exif": {
+      "camera": "Pentax K-3",
+      "lens": "HD PENTAX-DA 55-300mm ED PLM WR RE",
+      "focal": "135mm",
+      "aperture": "f/4.0",
+      "shutter": "1/200s",
+      "iso": "200"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-15",
+    "title": "Pacific Coastal Mist & Rodeo Valley Panorama",
+    "category": "landscapes-aerial",
+    "categoryLabel": "Landscapes & Drone",
+    "image": "assets/img/gallery/IMG_0244.jpg",
+    "aspect": "4:3",
+    "location": "Marin Headlands, California, USA",
+    "caption": "Vast coastal panorama showcasing lush spring ridges descending into Rodeo Lagoon and the Pacific ocean, framed by drifting maritime fog.",
+    "exif": {
+      "camera": "Apple iPhone 14 Pro Max",
+      "lens": "iPhone 14 Pro Max 24mm f/1.78",
+      "focal": "24mm equiv",
+      "aperture": "f/1.78",
+      "shutter": "1/5000s",
+      "iso": "64"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-16",
+    "title": "Sunburst Over the Rolling Crest",
+    "category": "golden-hour",
+    "categoryLabel": "Golden & Blue Hour",
+    "image": "assets/img/gallery/IMGP7699.jpg",
+    "aspect": "3:2",
+    "location": "Coastal Range Ridge",
+    "caption": "Dramatic optical sunstar bursting through the branches of a lonely oak tree on a windswept hill under layered towering cumulus clouds.",
+    "exif": {
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 16-85mm F3.5-5.6 ED DC WR",
+      "focal": "38mm",
+      "aperture": "f/18",
+      "shutter": "1/320s",
       "iso": "100"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-17",
+    "title": "Speed Limit 15 — Marin Coastal Curve",
+    "category": "urban-travel",
+    "categoryLabel": "Urban & Architecture",
+    "image": "assets/img/gallery/IMGP7821.jpg",
+    "aspect": "3:2",
+    "location": "Point Bonita Road, Marin County, California",
+    "caption": "Curving scenic coastal road sign guiding travelers through grassy hills toward the Point Bonita Lighthouse suspension bridge.",
+    "exif": {
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 16-85mm F3.5-5.6 ED DC WR",
+      "focal": "55mm",
+      "aperture": "f/10",
+      "shutter": "1/1000s",
+      "iso": "2000"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-18",
+    "title": "Victorian Park Bandstand & Water Mirror",
+    "category": "urban-travel",
+    "categoryLabel": "Urban & Architecture",
+    "image": "assets/img/gallery/IMGP7160.jpg",
+    "aspect": "3:2",
+    "location": "Historic Municipal Gardens",
+    "caption": "Ornate turn-of-the-century green wooden park pavilion and bandstand reflecting cleanly across still pond water bordered by weeping willows.",
+    "exif": {
+      "camera": "Pentax K-3 Mark III",
+      "lens": "HD PENTAX-DA 16-85mm F3.5-5.6 ED DC WR",
+      "focal": "50mm",
+      "aperture": "f/4.5",
+      "shutter": "1/250s",
+      "iso": "125"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-19",
+    "title": "American Robin in Spring Meadow",
+    "category": "nature-wildlife",
+    "categoryLabel": "Nature & Wildlife",
+    "image": "assets/img/gallery/2022-04-09_13-40-45_335.jpg",
+    "aspect": "3:2",
+    "location": "Central Park, New York City",
+    "caption": "American Robin (Turdus migratorius) standing alert in verdant spring lawn, with vivid terracotta-orange plumage contrasted against lush greens.",
+    "exif": {
+      "camera": "Pentax K-3",
+      "lens": "HD PENTAX-DA 55-300mm ED PLM WR RE",
+      "focal": "135mm",
+      "aperture": "f/4.0",
+      "shutter": "1/250s",
+      "iso": "200"
     },
     "licensing": {
       "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",

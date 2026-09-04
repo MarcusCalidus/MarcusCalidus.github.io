@@ -522,6 +522,8 @@ class PhotographyEngine {
     this.alamyBtn = document.getElementById('modal-alamy-btn');
     this.adobeBtn = document.getElementById('modal-adobe-btn');
     this.shutterBtn = document.getElementById('modal-shutter-btn');
+    this.prevBtn = document.getElementById('lightbox-prev');
+    this.nextBtn = document.getElementById('lightbox-next');
 
     this.photos = [];
     this.currentCategory = 'all';
@@ -552,10 +554,36 @@ class PhotographyEngine {
       this.closeBtn.addEventListener('click', () => this.closeModal());
     }
 
+    if (this.prevBtn) {
+      this.prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.navigateModal(-1);
+      });
+    }
+
+    if (this.nextBtn) {
+      this.nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.navigateModal(1);
+      });
+    }
+
     if (this.modal) {
       this.modal.addEventListener('click', (e) => {
         if (e.target === this.modal) this.closeModal();
       });
+
+      // Mobile touch swipe gestures
+      let touchStartX = 0;
+      this.modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      this.modal.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 60) this.navigateModal(1);
+        if (touchEndX - touchStartX > 60) this.navigateModal(-1);
+      }, { passive: true });
     }
 
     window.addEventListener('keydown', (e) => {

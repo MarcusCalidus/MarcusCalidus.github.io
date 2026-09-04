@@ -1483,6 +1483,41 @@ button {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  z-index: 5;
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.lightbox-nav-btn:hover {
+  background: rgba(245, 158, 11, 0.85);
+  color: #000000;
+  border-color: var(--amber-gold);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-nav-btn.prev {
+  left: 1rem;
+}
+
+.lightbox-nav-btn.next {
+  right: 1rem;
+}
+
 .lightbox-exif-table {
   width: 100%;
   margin: 1.5rem 0;

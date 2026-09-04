@@ -1,0 +1,147 @@
+[
+  {
+    "name": "marcuscalidus-svg-panel",
+    "title": "Grafana SVG Dynamic Panel",
+    "category": "grafana",
+    "categoryLabel": "Grafana & SVG",
+    "featured": true,
+    "stars": 64,
+    "language": "JavaScript",
+    "languageColor": "#f1e05a",
+    "description": "A popular Grafana panel plugin for displaying metric-sensitive SVG images with dynamic animations and color manipulation using Snap.svg.",
+    "tags": ["Grafana", "SVG", "Snap.svg", "Visualization", "Metrics"],
+    "html_url": "https://github.com/MarcusCalidus/marcuscalidus-svg-panel",
+    "highlights": [
+      "Dynamic SVG node manipulation driven by real-time metrics",
+      "Custom CSS styling & event binding inside dashboards",
+      "Over 64+ stars from the Grafana observability community"
+    ]
+  },
+  {
+    "name": "SunTimes",
+    "title": "SunTimes watchOS Complication",
+    "category": "apple",
+    "categoryLabel": "Apple & watchOS",
+    "featured": true,
+    "stars": 0,
+    "language": "Swift",
+    "languageColor": "#F05138",
+    "description": "A specialized watchOS complication app tracking photographic golden hour, blue hour, civil twilight, sunrise, and sunset using NOAA solar equations.",
+    "tags": ["Swift", "watchOS", "WidgetKit", "SwiftUI", "Photography"],
+    "html_url": "https://github.com/MarcusCalidus/SunTimes",
+    "icon": "assets/img/suntimes-icon.png",
+    "highlights": [
+      "NOAA solar mathematical calculations accurate within ~1 minute",
+      "4 complication families: Corner, Circular, Inline, Rectangular",
+      "Battery-efficient timeline entries with zero background polling"
+    ]
+  },
+  {
+    "name": "sigma-air-manager-exporter",
+    "title": "Kaeser Sigma Air Manager Exporter",
+    "category": "iot",
+    "categoryLabel": "Industrial & IoT",
+    "featured": true,
+    "stars": 3,
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "description": "Production-ready Prometheus telemetry exporter for KAESER CONNECT – SIGMA AIR MANAGER 4.0 industrial compressed air systems.",
+    "tags": ["TypeScript", "Prometheus", "Kaeser", "IoT", "Industry 4.0"],
+    "html_url": "https://github.com/MarcusCalidus/sigma-air-manager-exporter",
+    "highlights": [
+      "Industrial compressed air metric scraping",
+      "Prometheus exposition format integration",
+      "Robust connection handling and error recovery"
+    ]
+  },
+  {
+    "name": "s7-plc-exporter",
+    "title": "Siemens S7 PLC Prometheus Exporter",
+    "category": "iot",
+    "categoryLabel": "Industrial & IoT",
+    "featured": true,
+    "stars": 6,
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "description": "Specialized Prometheus exporter for Siemens S7 PLC industrial automation controllers, enabling modern time-series monitoring in industrial environments.",
+    "tags": ["TypeScript", "Siemens S7", "PLC", "Prometheus", "SCADA"],
+    "html_url": "https://github.com/MarcusCalidus/s7-plc-exporter",
+    "highlights": [
+      "Native S7 communication protocol integration",
+      "Real-time register and flag polling",
+      "Bridge between legacy industrial automation and Prometheus"
+    ]
+  },
+  {
+    "name": "twincat-ads-webservice-exporter",
+    "title": "Beckhoff TwinCAT ADS Exporter",
+    "category": "iot",
+    "categoryLabel": "Industrial & IoT",
+    "featured": false,
+    "stars": 3,
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "description": "A generic Prometheus exporter for Beckhoff PLC controllers communicating over the ADS WebService protocol.",
+    "tags": ["TypeScript", "Beckhoff", "TwinCAT", "ADS", "Prometheus"],
+    "html_url": "https://github.com/MarcusCalidus/twincat-ads-webservice-exporter",
+    "highlights": [
+      "ADS WebService communication mapping",
+      "Configurable metric schemas for PLC variables",
+      "Designed for reliable manufacturing telemetry"
+    ]
+  },
+  {
+    "name": "lan-server-modbus",
+    "title": "Modbus/TCP LAN Concentrator Exporter",
+    "category": "iot",
+    "categoryLabel": "Industrial & IoT",
+    "featured": false,
+    "stars": 0,
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "description": "Prometheus exporter for K'ELECTRIC LAN server Modbus/TCP data concentrators, bringing energy and power measurements into monitoring stacks.",
+    "tags": ["TypeScript", "Modbus TCP", "Energy", "Prometheus"],
+    "html_url": "https://github.com/MarcusCalidus/lan-server-modbus",
+    "highlights": [
+      "Modbus register parsing and scaling",
+      "Energy meter telemetry collection",
+      "Prometheus metric naming standards"
+    ]
+  },
+  {
+    "name": "BudgetEnvelopes",
+    "title": "Budget Envelopes Android App",
+    "category": "apps",
+    "categoryLabel": "Apps & Utilities",
+    "featured": true,
+    "stars": 3,
+    "language": "Java",
+    "languageColor": "#b07219",
+    "description": "Native Android app for planning your personal and family budget using the tried-and-true virtual envelopes cash-allocation method.",
+    "tags": ["Android", "Java", "Personal Finance", "Mobile"],
+    "html_url": "https://github.com/MarcusCalidus/BudgetEnvelopes",
+    "highlights": [
+      "Zero-based envelope budgeting philosophy",
+      "Intuitive expense tracking without invasive sync",
+      "Lightweight and private personal finance tool"
+    ]
+  },
+  {
+    "name": "ts-material-icons-svg",
+    "title": "TypeScript Material Icons SVG",
+    "category": "tools",
+    "categoryLabel": "Apps & Utilities",
+    "featured": false,
+    "stars": 6,
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "description": "Comprehensive library making modern Google Material Icons SVG definitions natively accessible with full TypeScript types and intellisense.",
+    "tags": ["TypeScript", "SVG", "Material Design", "Icons"],
+    "html_url": "https://github.com/MarcusCalidus/ts-material-icons-svg",
+    "highlights": [
+      "Full TypeScript type safety for all icon identifiers",
+      "Zero-dependency tree-shakeable SVG outputs",
+      "Clean integration into modern frontend frameworks"
+    ]
+  }
+]

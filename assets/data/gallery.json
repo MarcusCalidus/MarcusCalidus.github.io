@@ -1,0 +1,94 @@
+[
+  {
+    "id": "photo-1",
+    "title": "Sunbeams through Mountain Mist",
+    "category": "golden-hour",
+    "categoryLabel": "Golden Hour & Light",
+    "image": "assets/img/gallery/golden_hour_mist.jpg",
+    "aspect": "3:2",
+    "location": "Bavarian Alpine Foothills, Germany",
+    "caption": "Early morning golden hour sunbeams radiating through dense pine forest fog, illuminating rolling mountain ridges.",
+    "exif": {
+      "camera": "Sony Alpha 7R IV",
+      "lens": "FE 24-70mm F2.8 GM",
+      "focal": "45mm",
+      "aperture": "f/8.0",
+      "shutter": "1/250s",
+      "iso": "100"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-2",
+    "title": "Geometric Modern Steel & Glass Pavilion",
+    "category": "architecture",
+    "categoryLabel": "Architecture & Design",
+    "image": "assets/img/gallery/architecture_modern.jpg",
+    "aspect": "3:2",
+    "location": "Frankfurt am Main, Germany",
+    "caption": "Minimalist architectural study capturing geometric cross-braced steel structures and warm interior illumination against blue hour dusk.",
+    "exif": {
+      "camera": "Sony Alpha 7R IV",
+      "lens": "FE 16-35mm F2.8 GM",
+      "focal": "21mm",
+      "aperture": "f/11",
+      "shutter": "4.0s",
+      "iso": "50"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-3",
+    "title": "Industrial Steel Piping & Telemetry Valves",
+    "category": "industrial",
+    "categoryLabel": "Industrial & Tech",
+    "image": "assets/img/gallery/industrial_steel.jpg",
+    "aspect": "3:2",
+    "location": "Ruhr Valley Industrial Complex, Germany",
+    "caption": "Complex industrial piping networks with analog pressure gauges and gate valves under dramatic tungsten overhead lamps.",
+    "exif": {
+      "camera": "Sony Alpha 7R IV",
+      "lens": "FE 35mm F1.4 GM",
+      "focal": "35mm",
+      "aperture": "f/4.0",
+      "shutter": "1/60s",
+      "iso": "400"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  },
+  {
+    "id": "photo-4",
+    "title": "Blue Hour Coastal Beacon & Swirling Tides",
+    "category": "golden-hour",
+    "categoryLabel": "Golden Hour & Light",
+    "image": "assets/img/gallery/blue_hour_seascape.jpg",
+    "aspect": "3:2",
+    "location": "Brittany Atlantic Coast",
+    "caption": "Long exposure capturing misty ocean waves cascading across granite reefs below a glowing lighthouse in twilight.",
+    "exif": {
+      "camera": "Sony Alpha 7R IV",
+      "lens": "FE 16-35mm F2.8 GM",
+      "focal": "18mm",
+      "aperture": "f/13",
+      "shutter": "15.0s",
+      "iso": "100"
+    },
+    "licensing": {
+      "alamy": "https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant",
+      "adobe": "https://stock.adobe.com/de/contributor/208533127/Marco%20Warm",
+      "shutterstock": "https://www.shutterstock.com/g/Marco+Warm"
+    }
+  }
+]

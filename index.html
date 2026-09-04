@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Marco Warm (MarcusCalidus) | Developer · Photographer · Bible Teacher</title>
+  <meta name="title" content="Marco Warm (MarcusCalidus) | Developer · Photographer · Bible Teacher" />
+  <meta name="description" content="Personal portfolio of Marco Warm (MarcusCalidus). Open source developer specializing in IoT, Prometheus, and watchOS; international stock photographer; and Bible teacher." />
+  <meta name="author" content="Marco Warm" />
+  <meta name="keywords" content="Marco Warm, MarcusCalidus, Developer, Photographer, Stock Photography, Alamy, Adobe Stock, Shutterstock, watchOS, Swift, Prometheus, Grafana, Bible, JW.org" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://marcuscalidus.github.io/" />
+  <meta property="og:title" content="Marco Warm (MarcusCalidus) | Developer · Photographer · Bible Teacher" />
+  <meta property="og:description" content="Explore open-source engineering projects, global stock photography portfolios, and thoughtful reflections on timeless biblical guidance." />
+  <meta property="og:image" content="assets/img/gallery/golden_hour_mist.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://marcuscalidus.github.io/" />
+  <meta property="twitter:title" content="Marco Warm (MarcusCalidus) | Developer · Photographer · Bible Teacher" />
+  <meta property="twitter:description" content="Explore open-source engineering projects, global stock photography portfolios, and thoughtful reflections on timeless biblical guidance." />
+  <meta property="twitter:image" content="assets/img/gallery/golden_hour_mist.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/img/avatar.jpg" />
+
+  <!-- Google Fonts: Outfit, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Interactive Canvas Background -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/img/avatar.jpg" alt="Marco Warm" class="nav-brand-avatar" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Marco Warm</span>
+          <span class="nav-brand-sub">&lt;MarcusCalidus /&gt;</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#development" class="nav-link">Development</a></li>
+        <li><a href="#suntimes" class="nav-link">SunTimes App</a></li>
+        <li><a href="#photography" class="nav-link">Photography</a></li>
+        <li><a href="#faith" class="nav-link">Bible &amp; Faith</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+
+      <!-- Navbar Actions: GitHub & Theme Toggle -->
+      <div class="nav-actions">
+        <a href="https://github.com/MarcusCalidus" class="icon-btn" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+          </svg>
+        </a>
+
+        <button id="theme-toggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle dark/light mode">
+          <span id="theme-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
+
+        <button id="mobile-toggle" class="icon-btn mobile-toggle" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#development" class="nav-link">Development Work</a>
+      <a href="#suntimes" class="nav-link">SunTimes watchOS App</a>
+      <a href="#photography" class="nav-link">Stock Photography</a>
+      <a href="#faith" class="nav-link">Bible &amp; Faith</a>
+      <a href="#about" class="nav-link">About &amp; Contact</a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Hero Section
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-content">
+      <div>
+        <div class="hero-badge-container">
+          <span class="hero-badge badge-cyan">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Open Source Developer
+          </span>
+          <span class="hero-badge badge-amber">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Stock Photographer
+          </span>
+          <span class="hero-badge badge-emerald">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Bible Teacher
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Engineering Software.<br />
+          Capturing <span class="gradient-text-solar">Light</span>.<br />
+          Living <span class="gradient-text-cyan">Truth</span>.
+        </h1>
+
+        <p class="hero-desc">
+          I am <strong>Marco Warm</strong> (<em>MarcusCalidus</em>), based in Germany. 
+          Bridging technical precision in software engineering and IoT telemetry, 
+          the photographic craft of golden-hour light across global stock platforms, 
+          and the timeless practical wisdom found in the Bible.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#development" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Explore Code
+          </a>
+          <a href="#photography" class="btn btn-solar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19 4h-1.5L16 2H8L6.5 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path></svg>
+            View Photography
+          </a>
+          <a href="#faith" class="btn btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Bible Guidance
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">GitHub Repositories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Global Stock Portfolios</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Timeless Life Foundation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Showcase Card Stack -->
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-profile-header">
+            <img src="assets/img/avatar.jpg" alt="Marco Warm" class="hero-avatar" />
+            <div>
+              <h3 class="hero-profile-name">Marco Warm</h3>
+              <p class="hero-profile-tag">github.com/MarcusCalidus</p>
+            </div>
+          </div>
+
+          <div class="hero-pillars-mini">
+            <a href="#development" class="pillar-row">
+              <span class="pillar-icon cyan">💻</span>
+              <div>
+                <strong>Code &amp; IoT Monitoring</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Prometheus Exporters, Grafana &amp; watchOS</div>
+              </div>
+            </a>
+
+            <a href="#photography" class="pillar-row">
+              <span class="pillar-icon amber">📸</span>
+              <div>
+                <strong>Stock Photography</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Alamy, Adobe Stock &amp; Shutterstock Contributor</div>
+              </div>
+            </a>
+
+            <a href="#faith" class="pillar-row">
+              <span class="pillar-icon emerald">📖</span>
+              <div>
+                <strong>Timeless Bible Wisdom</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Practical guidance for modern human life</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Development Section
+       ======================================================================== -->
+  <section class="section section-alt" id="development">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow cyan">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          Software Engineering
+        </span>
+        <h2 class="section-title">Open Source &amp; Systems Development</h2>
+        <p class="section-subtitle">
+          Specializing in industrial automation telemetry (Siemens S7, Beckhoff, Kaeser compressed air), 
+          dynamic Grafana visualization plugins, and native Apple watchOS complications.
+        </p>
+      </div>
+
+      <!-- Controls: Filters & Search -->
+      <div class="dev-controls">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All Repos</button>
+          <button class="filter-btn" data-filter="featured">⭐ Featured</button>
+          <button class="filter-btn" data-filter="iot">⚙️ Industrial &amp; IoT</button>
+          <button class="filter-btn" data-filter="apple">⌚ Apple &amp; watchOS</button>
+          <button class="filter-btn" data-filter="grafana">📊 Grafana &amp; SVG</button>
+          <button class="filter-btn" data-filter="apps">📱 Apps</button>
+        </div>
+
+        <div style="display:flex; align-items:center; gap: 1rem; flex-wrap: wrap;">
+          <span id="github-live-status" class="hero-badge badge-cyan" style="font-size: 0.78rem;">
+            Checking GitHub...
+          </span>
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="project-search" class="search-input" placeholder="Search by name, tag, language..." />
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Projects Grid -->
+      <div class="projects-grid" id="projects-container">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+
+      <!-- Interactive SunTimes Feature Box -->
+      <div class="suntimes-showcase" id="suntimes">
+        <div class="suntimes-header">
+          <div class="suntimes-title-wrap">
+            <img src="assets/img/suntimes-icon.png" alt="SunTimes Icon" class="suntimes-app-icon" />
+            <div>
+              <span class="section-eyebrow amber">Where Code Meets Photography</span>
+              <h3 style="font-size: 1.6rem; font-weight: 700;">SunTimes Solar Phase Calculator</h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                Derived from the NOAA solar math inside my <a href="https://github.com/MarcusCalidus/SunTimes" target="_blank" style="color: var(--amber-light); text-decoration: underline;">SunTimes watchOS complication</a>.
+              </p>
+            </div>
+          </div>
+          <button id="solar-now-btn" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+            🕒 Use Current Local Time
+          </button>
+        </div>
+
+        <div class="suntimes-calc-grid">
+          <div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+              Drag the time slider to calculate the exact solar elevation and see how photographic light changes across 24 hours:
+            </p>
+
+            <div class="slider-container">
+              <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+                <span id="solar-time-label">18:30 (Simulated Time)</span>
+                <span style="color: var(--text-muted);">00:00 — 24:00</span>
+              </div>
+              <input type="range" id="solar-hour-slider" class="solar-slider" min="0" max="24" step="0.25" value="18.5" />
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; font-size: 0.82rem;">
+              <span class="tag">Blue Hour: -6° to -4°</span>
+              <span class="tag">Golden Hour: -4° to +6°</span>
+              <span class="tag">Daylight: &gt; +6°</span>
+            </div>
+          </div>
+
+          <div class="solar-display-card" id="solar-display-card">
+            <span class="solar-phase-badge" id="solar-phase-badge">Golden Hour</span>
+            <div class="solar-elevation" id="solar-elevation-display">+3°</div>
+            <p class="solar-tip" id="solar-tip-display">
+              Magic hour! Warm low-angle raking sunlight, long soft shadows, natural diffusion, and mountain mist backlight.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Photography Section
+       ======================================================================== -->
+  <section class="section" id="photography">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow amber">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19 4h-1.5L16 2H8L6.5 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path></svg>
+          Photography &amp; Light
+        </span>
+        <h2 class="section-title">Stock Photography Across Global Agencies</h2>
+        <p class="section-subtitle">
+          Capturing natural light, architectural geometry, and industrial landscapes. 
+          My work is licensed worldwide for commercial, editorial, and artistic publications across leading stock distributors.
+        </p>
+      </div>
+
+      <!-- Marketplace Agency Hub Cards -->
+      <div class="agency-strip">
+        <a href="https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant" target="_blank" rel="noopener noreferrer" class="agency-card">
+          <span class="agency-badge">Editorial &amp; Commercial</span>
+          <h3 class="agency-title">Alamy</h3>
+          <p class="agency-desc">Extensive hi-res editorial and creative stock photo catalog. Verified Alamy Contributor collection.</p>
+          <span class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
+            Browse on Alamy &rarr;
+          </span>
+        </a>
+
+        <a href="https://stock.adobe.com/de/contributor/208533127/Marco%20Warm" target="_blank" rel="noopener noreferrer" class="agency-card">
+          <span class="agency-badge">Creative Cloud</span>
+          <h3 class="agency-title">Adobe Stock</h3>
+          <p class="agency-desc">Integrated into the Adobe creative ecosystem. High-fidelity travel, architecture, and landscape imagery.</p>
+          <span class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
+            Browse on Adobe Stock &rarr;
+          </span>
+        </a>
+
+        <a href="https://www.shutterstock.com/g/Marco+Warm" target="_blank" rel="noopener noreferrer" class="agency-card">
+          <span class="agency-badge">Global Royalty-Free</span>
+          <h3 class="agency-title">Shutterstock</h3>
+          <p class="agency-desc">Worldwide commercial royalty-free licensing for advertising, publication, and digital media.</p>
+          <span class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
+            Browse on Shutterstock &rarr;
+          </span>
+        </a>
+      </div>
+
+      <!-- Photography Category Filters -->
+      <div class="dev-controls" style="margin-bottom: 2rem;">
+        <div class="filter-group">
+          <button class="photo-filter-btn filter-btn active" data-filter="all">All Showcase</button>
+          <button class="photo-filter-btn filter-btn" data-filter="golden-hour">🌅 Golden &amp; Blue Hour</button>
+          <button class="photo-filter-btn filter-btn" data-filter="architecture">🏛️ Architecture</button>
+          <button class="photo-filter-btn filter-btn" data-filter="industrial">⚙️ Industrial &amp; Tech</button>
+        </div>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">
+          Click any photograph to view high-res details and licensing links
+        </span>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Connection to the Bible Section
+       ======================================================================== -->
+  <section class="section section-alt" id="faith">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow emerald">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          Spiritual Foundation
+        </span>
+        <h2 class="section-title">Faith, Reason &amp; Timeless Guidance</h2>
+        <p class="section-subtitle">
+          In an era driven by high-tech automation and endless digital noise, 
+          why does an ancient book remain the most practical, stabilizing compass for life?
+        </p>
+      </div>
+
+      <div class="faith-grid">
+        <!-- Feature Article Card -->
+        <article class="article-feature-card">
+          <div class="article-badge-row">
+            <span class="article-source-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              JW.org Feature Article
+            </span>
+            <span style="font-size: 0.82rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+              The Watchtower No. 1
+            </span>
+          </div>
+
+          <h3 class="article-title">Is the Bible’s Guidance Relevant Today?</h3>
+
+          <div class="article-quote-box">
+            <p class="quote-text">
+              “Science and technology change rapidly, but has human nature changed? 
+              People still want to find meaning in life as well as to have a reasonable measure of happiness and security, 
+              good family relations, and rewarding friendships.”
+            </p>
+            <span class="quote-author">— The Watchtower, “Is the Bible’s Guidance Relevant Today?”</span>
+          </div>
+
+          <div class="article-prose">
+            <p>
+              Some skeptics compare using the Bible for guidance today to teaching modern chemistry from a 1920s textbook 
+              or using an ancient computer manual to operate a contemporary machine. In other words, they assume the Bible is hopelessly outmoded.
+            </p>
+            <p>
+              <strong>Yet the analogy is fundamentally flawed.</strong> 
+              While processor speeds double and software frameworks come and go, fundamental human emotional and spiritual needs remain identical. 
+              We face anxiety, relationship friction, ethical dilemmas, and the timeless question of purpose.
+            </p>
+            <p>
+              As a software developer who deals daily with precision, logic, and rapid obsolescence, 
+              I find profound grounding in principles that never go obsolete. The Bible speaks with timeless authority directly to human experience:
+            </p>
+          </div>
+
+          <div class="article-actions">
+            <a href="https://www.jw.org/en/library/magazines/watchtower-no1-2018-jan-feb/bible-guidance-relevant/" target="_blank" rel="noopener noreferrer" class="btn btn-emerald">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              Read Full Article on JW.org
+            </a>
+            <a href="https://www.jw.org/en/bible-teachings/free-bible-study/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              Request Free Bible Course
+            </a>
+          </div>
+        </article>
+
+        <!-- Sidebar: Personal Reflections -->
+        <div class="faith-reflections-sidebar">
+          <div class="reflection-card">
+            <div class="reflection-header">
+              <span class="reflection-icon">💻</span>
+              <h4 class="reflection-title">Engineering &amp; Integrity</h4>
+            </div>
+            <p class="reflection-text">
+              In software architecture, clean code demands honesty and discipline. 
+              Biblical ethics of integrity, diligence, and accountability elevate how we build tools and treat colleagues.
+            </p>
+          </div>
+
+          <div class="reflection-card">
+            <div class="reflection-header">
+              <span class="reflection-icon">🌅</span>
+              <h4 class="reflection-title">Observing Creation</h4>
+            </div>
+            <p class="reflection-text">
+              Through the camera lens—capturing the exact tilt of the sun, morning fog, and intricate flora—I see unmistakable evidence of order, mathematics, and artistic mastery designed by a Loving Creator.
+            </p>
+          </div>
+
+          <div class="reflection-card">
+            <div class="reflection-header">
+              <span class="reflection-icon">🤝</span>
+              <h4 class="reflection-title">Active Bible Teaching</h4>
+            </div>
+            <p class="reflection-text">
+              Volunteering as a Bible teacher allows me to share real comfort and proven answers with neighbors dealing with life's pressures and seeking genuine hope for the future.
+            </p>
+          </div>
+
+          <!-- Highlight Scripture -->
+          <div class="scripture-card">
+            <p class="scripture-verse">
+              “For the word of God is alive and exerts power and is sharper than any two-edged sword...”
+            </p>
+            <span class="scripture-ref">HEBREWS 4:12</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       About & Contact Section
+       ======================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-card">
+        <div class="about-grid">
+          <div>
+            <span class="section-eyebrow cyan">Profile</span>
+            <h3 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1.25rem;">About Marco Warm</h3>
+            <div class="about-text">
+              <p>
+                Based in Germany, I enjoy operating at the intersection of logical systems and creative expression. 
+                Whether architecting industrial telemetry exporters, developing watchOS complications, capturing 
+                stock landscapes during blue hour, or engaging in volunteer Bible education, I value clarity, precision, and purpose.
+              </p>
+              <p>
+                Always open to collaboration, technical exchanges, and interesting opportunities.
+              </p>
+
+              <div>
+                <strong style="color: var(--text-primary); font-size: 0.95rem;">Core Technologies &amp; Tools:</strong>
+                <div class="skills-cloud">
+                  <span class="skill-pill">TypeScript</span>
+                  <span class="skill-pill">Swift &amp; watchOS</span>
+                  <span class="skill-pill">Prometheus</span>
+                  <span class="skill-pill">Grafana</span>
+                  <span class="skill-pill">JavaScript / Node</span>
+                  <span class="skill-pill">Python</span>
+                  <span class="skill-pill">Siemens S7 &amp; Beckhoff ADS</span>
+                  <span class="skill-pill">Sony Alpha 7R</span>
+                  <span class="skill-pill">Lightroom Classic</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Connect Cards -->
+          <div class="connect-methods">
+            <a href="https://github.com/MarcusCalidus" target="_blank" rel="noopener noreferrer" class="connect-link-card">
+              <div class="connect-link-left">
+                <span class="connect-icon">🐙</span>
+                <div>
+                  <div class="connect-label">GitHub Profile</div>
+                  <div class="connect-sub">github.com/MarcusCalidus</div>
+                </div>
+              </div>
+              <span>&rarr;</span>
+            </a>
+
+            <a href="https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant" target="_blank" rel="noopener noreferrer" class="connect-link-card">
+              <div class="connect-link-left">
+                <span class="connect-icon">📷</span>
+                <div>
+                  <div class="connect-label">Alamy Stock Collection</div>
+                  <div class="connect-sub">High-res licensing</div>
+                </div>
+              </div>
+              <span>&rarr;</span>
+            </a>
+
+            <a href="https://stock.adobe.com/de/contributor/208533127/Marco%20Warm" target="_blank" rel="noopener noreferrer" class="connect-link-card">
+              <div class="connect-link-left">
+                <span class="connect-icon">🎨</span>
+                <div>
+                  <div class="connect-label">Adobe Stock Contributor</div>
+                  <div class="connect-sub">Marco Warm Portfolio</div>
+                </div>
+              </div>
+              <span>&rarr;</span>
+            </a>
+
+            <a href="https://www.shutterstock.com/g/Marco+Warm" target="_blank" rel="noopener noreferrer" class="connect-link-card">
+              <div class="connect-link-left">
+                <span class="connect-icon">🌐</span>
+                <div>
+                  <div class="connect-label">Shutterstock Portfolio</div>
+                  <div class="connect-sub">Commercial stock licensing</div>
+                </div>
+              </div>
+              <span>&rarr;</span>
+            </a>
+
+            <a href="https://www.jw.org/en/" target="_blank" rel="noopener noreferrer" class="connect-link-card">
+              <div class="connect-link-left">
+                <span class="connect-icon">📖</span>
+                <div>
+                  <div class="connect-label">JW.org Official Site</div>
+                  <div class="connect-sub">Free Bible study in 1000+ languages</div>
+                </div>
+              </div>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4 style="color: var(--text-primary); font-size: 1.2rem; margin-bottom: 0.5rem;">Marco Warm (MarcusCalidus)</h4>
+          <p style="font-size: 0.9rem; line-height: 1.6;">
+            Developer, Stock Photographer, and Bible Teacher. 
+            Hosted statically on GitHub Pages with live API integrations.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <div>
+            <h5 class="footer-col-title">Development</h5>
+            <ul class="footer-links-list">
+              <li><a href="https://github.com/MarcusCalidus/marcuscalidus-svg-panel" target="_blank" rel="noopener">Grafana SVG Panel</a></li>
+              <li><a href="https://github.com/MarcusCalidus/SunTimes" target="_blank" rel="noopener">SunTimes watchOS</a></li>
+              <li><a href="https://github.com/MarcusCalidus/sigma-air-manager-exporter" target="_blank" rel="noopener">Kaeser Exporter</a></li>
+              <li><a href="https://github.com/MarcusCalidus/s7-plc-exporter" target="_blank" rel="noopener">Siemens S7 Exporter</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Photography</h5>
+            <ul class="footer-links-list">
+              <li><a href="https://www.alamy.com/stock-photo/?cid=U8DZTKBZNCRB9MQC2GX4JH3M2FQAN8VQHF443HPFEZ2J7WV7KT76RQ9GPNST8457&sortBy=relevant" target="_blank" rel="noopener">Alamy Stock</a></li>
+              <li><a href="https://stock.adobe.com/de/contributor/208533127/Marco%20Warm" target="_blank" rel="noopener">Adobe Stock</a></li>
+              <li><a href="https://www.shutterstock.com/g/Marco+Warm" target="_blank" rel="noopener">Shutterstock</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Bible Guidance</h5>
+            <ul class="footer-links-list">
+              <li><a href="https://www.jw.org/en/library/magazines/watchtower-no1-2018-jan-feb/bible-guidance-relevant/" target="_blank" rel="noopener">Is the Bible Relevant?</a></li>
+              <li><a href="https://www.jw.org/en/bible-teachings/" target="_blank" rel="noopener">Bible Teachings</a></li>
+              <li><a href="https://www.jw.org/en/" target="_blank" rel="noopener">JW.org Official Site</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Marco Warm. All rights reserved. Code licensed under MIT / Apache 2.0.
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">
+          MarcusCalidus.github.io
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Photography Lightbox Modal
+       ======================================================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true">
+    <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close modal">&times;</button>
+    <div class="lightbox-container">
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" id="lightbox-image" class="lightbox-img" />
+      </div>
+
+      <div class="lightbox-details">
+        <h3 id="lightbox-title" style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.35rem;"></h3>
+        <p id="lightbox-location" style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;"></p>
+        <p id="lightbox-caption" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;"></p>
+
+        <h4 style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--amber-gold); margin-top: 1.5rem;">
+          Camera &amp; Shooting Metadata
+        </h4>
+        <table class="lightbox-exif-table">
+          <tbody id="lightbox-exif-body">
+            <!-- Filled dynamically by main.js -->
+          </tbody>
+        </table>
+
+        <div class="agency-licensing-btns">
+          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">
+            License This Photograph:
+          </span>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="#" id="modal-alamy-btn" target="_blank" rel="noopener" class="btn btn-outline" style="flex:1; justify-content:center; font-size:0.85rem; padding:0.6rem;">Alamy</a>
+            <a href="#" id="modal-adobe-btn" target="_blank" rel="noopener" class="btn btn-outline" style="flex:1; justify-content:center; font-size:0.85rem; padding:0.6rem;">Adobe Stock</a>
+            <a href="#" id="modal-shutter-btn" target="_blank" rel="noopener" class="btn btn-outline" style="flex:1; justify-content:center; font-size:0.85rem; padding:0.6rem;">Shutterstock</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript Engine -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

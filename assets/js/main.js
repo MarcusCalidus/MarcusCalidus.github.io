@@ -185,8 +185,19 @@ class ProjectsEngine {
     this.currentFilter = 'all';
     this.searchQuery = '';
     this.projects = [];
+    this.excludedRepos = [
+      'marcuscalidus.github.io',
+      'excel-exporter',
+      'field-service-territory-assignment-helper'
+    ];
 
     this.init();
+  }
+
+  isExcluded(name) {
+    if (!name) return true;
+    const n = name.toLowerCase().trim();
+    return this.excludedRepos.some(ex => n === ex || n.replace(/_/g, '-') === ex);
   }
 
   async init() {
@@ -226,6 +237,8 @@ class ProjectsEngine {
       console.warn('Using fallback projects', e);
     }
 
+    this.projects = this.projects.filter(p => !this.isExcluded(p.name));
+
     // 2. Fetch live data from GitHub API to enrich stars & repositories
     this.fetchLiveGitHubData();
     this.render();
@@ -247,9 +260,9 @@ class ProjectsEngine {
           }
         });
 
-        // Add any non-forked repo that isn't yet in curated list
+        // Add any non-forked repo that isn't yet in curated list and not excluded
         liveRepos.forEach(repo => {
-          if (!repo.fork && repo.name !== 'MarcusCalidus.github.io') {
+          if (!repo.fork && !this.isExcluded(repo.name)) {
             const exists = this.projects.some(p => p.name.toLowerCase() === repo.name.toLowerCase());
             if (!exists && repo.description) {
               this.projects.push({
@@ -273,9 +286,10 @@ class ProjectsEngine {
         });
 
         if (this.liveStatusPill) {
+          const visibleCount = liveRepos.filter(r => !this.isExcluded(r.name)).length;
           this.liveStatusPill.innerHTML = `
             <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>
-            Live GitHub Sync (${liveRepos.length} repos)
+            Live GitHub Sync (${visibleCount} repos)
           `;
         }
 
@@ -310,6 +324,8 @@ class ProjectsEngine {
     if (!this.projectsContainer) return;
 
     let filtered = this.projects.filter(p => {
+      if (this.isExcluded(p.name) || this.isExcluded(p.title)) return false;
+
       // Category filter
       if (this.currentFilter === 'featured') {
         if (!p.featured) return false;

@@ -399,10 +399,42 @@ class SunTimesCalculator {
     this.slider = document.getElementById('solar-hour-slider');
     this.timeLabel = document.getElementById('solar-time-label');
     this.elevationDisplay = document.getElementById('solar-elevation-display');
+    this.metricsSub = document.getElementById('solar-metrics-sub');
     this.phaseBadge = document.getElementById('solar-phase-badge');
     this.tipDisplay = document.getElementById('solar-tip-display');
     this.nowBtn = document.getElementById('solar-now-btn');
     this.displayCard = document.getElementById('solar-display-card');
+
+    this.geolocateBtn = document.getElementById('solar-geolocate-btn');
+    this.geoIcon = document.getElementById('solar-geo-icon');
+    this.geoText = document.getElementById('solar-geo-text');
+    this.presetSelect = document.getElementById('solar-preset-select');
+    this.locationBadge = document.getElementById('solar-location-badge');
+    this.datePicker = document.getElementById('solar-date-picker');
+
+    this.msSunrise = document.getElementById('ms-sunrise');
+    this.msNoon = document.getElementById('ms-noon');
+    this.msSunset = document.getElementById('ms-sunset');
+    this.msGolden = document.getElementById('ms-golden');
+    this.msBlue = document.getElementById('ms-blue');
+
+    // Preset coordinates
+    this.presets = {
+      frankfurt: { name: 'Frankfurt, Germany', lat: 50.1109, lon: 8.6821 },
+      berlin: { name: 'Berlin, Germany', lat: 52.5200, lon: 13.4050 },
+      zittau: { name: 'Zittau / Dreiländereck', lat: 50.8967, lon: 14.8058 },
+      london: { name: 'London, UK', lat: 51.5074, lon: -0.1278 },
+      newyork: { name: 'New York City, USA', lat: 40.7128, lon: -74.0060 },
+      sanfrancisco: { name: 'San Francisco, USA', lat: 37.7749, lon: -122.4194 },
+      tokyo: { name: 'Tokyo, Japan', lat: 35.6762, lon: 139.6503 },
+      sydney: { name: 'Sydney, Australia', lat: -33.8688, lon: 151.2093 }
+    };
+
+    // Current state
+    this.currentLat = this.presets.frankfurt.lat;
+    this.currentLon = this.presets.frankfurt.lon;
+    this.currentLocationName = this.presets.frankfurt.name;
+    this.currentDate = new Date();
 
     this.init();
   }
@@ -410,9 +442,30 @@ class SunTimesCalculator {
   init() {
     if (!this.slider) return;
 
-    // Set to current local time initially
+    this.initDatePicker();
+    this.bindEvents();
     this.setToCurrentTime();
+    this.recalculateAll();
+  }
 
+  initDatePicker() {
+    if (this.datePicker) {
+      const y = this.currentDate.getFullYear();
+      const m = String(this.currentDate.getMonth() + 1).padStart(2, '0');
+      const d = String(this.currentDate.getDate()).padStart(2, '0');
+      this.datePicker.value = `${y}-${m}-${d}`;
+
+      this.datePicker.addEventListener('change', () => {
+        if (this.datePicker.value) {
+          const parts = this.datePicker.value.split('-');
+          this.currentDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+          this.recalculateAll();
+        }
+      });
+    }
+  }
+
+  bindEvents() {
     this.slider.addEventListener('input', () => {
       this.update(parseFloat(this.slider.value));
     });
@@ -422,28 +475,274 @@ class SunTimesCalculator {
         this.setToCurrentTime();
       });
     }
+
+    if (this.presetSelect) {
+      this.presetSelect.addEventListener('change', () => {
+        const key = this.presetSelect.value;
+        if (this.presets[key]) {
+          this.currentLat = this.presets[key].lat;
+          this.currentLon = this.presets[key].lon;
+          this.currentLocationName = this.presets[key].name;
+          this.updateLocationBadge();
+          this.recalculateAll();
+        }
+      });
+    }
+
+    if (this.geolocateBtn) {
+      this.geolocateBtn.addEventListener('click', () => {
+        this.detectUserLocation();
+      });
+    }
+  }
+
+  detectUserLocation() {
+    if (!navigator.geolocation) {
+      window.AppToast?.show('Geolocation is not supported by your browser', 'info');
+      return;
+    }
+
+    if (this.geoText) this.geoText.textContent = 'Detecting GPS...';
+    if (this.geolocateBtn) this.geolocateBtn.classList.add('loading');
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.currentLat = position.coords.latitude;
+        this.currentLon = position.coords.longitude;
+        this.currentLocationName = 'Browser GPS Location';
+
+        // Add or update custom GPS option in select
+        let gpsOpt = this.presetSelect?.querySelector('option[value="gps"]');
+        if (!gpsOpt && this.presetSelect) {
+          gpsOpt = document.createElement('option');
+          gpsOpt.value = 'gps';
+          this.presetSelect.prepend(gpsOpt);
+        }
+        if (gpsOpt) {
+          gpsOpt.textContent = `📍 GPS (${this.currentLat.toFixed(2)}°, ${this.currentLon.toFixed(2)}°)`;
+          gpsOpt.selected = true;
+        }
+
+        if (this.geoText) this.geoText.textContent = 'GPS Located';
+        if (this.geolocateBtn) this.geolocateBtn.classList.remove('loading');
+
+        this.updateLocationBadge();
+        this.recalculateAll();
+        window.AppToast?.show(`📍 Solar location set to ${this.currentLat.toFixed(2)}°N, ${this.currentLon.toFixed(2)}°E`, 'success');
+      },
+      (error) => {
+        if (this.geoText) this.geoText.textContent = 'Detect My Location';
+        if (this.geolocateBtn) this.geolocateBtn.classList.remove('loading');
+        let msg = 'Unable to retrieve location';
+        if (error.code === error.PERMISSION_DENIED) {
+          msg = 'Location permission was denied. Using default preset.';
+        } else if (error.code === error.TIMEOUT) {
+          msg = 'Location request timed out. Using default preset.';
+        }
+        window.AppToast?.show(msg, 'info');
+      },
+      { timeout: 8000, enableHighAccuracy: false }
+    );
+  }
+
+  updateLocationBadge() {
+    if (this.locationBadge) {
+      const latStr = `${Math.abs(this.currentLat).toFixed(2)}°${this.currentLat >= 0 ? 'N' : 'S'}`;
+      const lonStr = `${Math.abs(this.currentLon).toFixed(2)}°${this.currentLon >= 0 ? 'E' : 'W'}`;
+      this.locationBadge.textContent = `${latStr}, ${lonStr}`;
+    }
   }
 
   setToCurrentTime() {
     const now = new Date();
+    this.currentDate = now;
+    if (this.datePicker) {
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, '0');
+      const d = String(now.getDate()).padStart(2, '0');
+      this.datePicker.value = `${y}-${m}-${d}`;
+    }
     const hours = now.getHours() + now.getMinutes() / 60;
-    this.slider.value = hours.toFixed(2);
-    this.update(hours);
+    this.slider.value = hours.toFixed(1);
+    this.recalculateAll();
+  }
+
+  recalculateAll() {
+    this.updateMilestones();
+    this.update(parseFloat(this.slider.value));
+  }
+
+  // ========================================================================
+  // NOAA Solar Equations (Derived from SunTimes watchOS App)
+  // ========================================================================
+  toRadians(deg) { return deg * Math.PI / 180; }
+  toDegrees(rad) { return rad * 180 / Math.PI; }
+
+  calcNOAA(lat, lon, date, hourDecimal) {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    // Julian Day Calculation
+    const a = Math.floor((14 - month) / 12);
+    const y = year + 4800 - a;
+    const m = month + 12 * a - 3;
+    let jd = day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+
+    // Timezone Offset in hours
+    const tzOffsetHours = -date.getTimezoneOffset() / 60;
+    const utcHours = hourDecimal - tzOffsetHours;
+    jd += (utcHours - 12) / 24;
+
+    const T = (jd - 2451545.0) / 36525.0;
+
+    // Geometric Mean Longitude of the Sun (deg)
+    let geomMeanLongSun = (280.46646 + T * (36000.76983 + 0.0003032 * T)) % 360;
+    if (geomMeanLongSun < 0) geomMeanLongSun += 360;
+
+    // Geometric Mean Anomaly of the Sun (deg)
+    const geomMeanAnomSun = 357.52911 + T * (35999.05029 - 0.0001537 * T);
+
+    // Eccentricity of Earth's Orbit
+    const eccentEarthOrbit = 0.016708634 - T * (0.000042037 + 0.0000001267 * T);
+
+    // Sun Equation of Center
+    const sunEqOfCtr = Math.sin(this.toRadians(geomMeanAnomSun)) * (1.914602 - T * (0.004817 + 0.000014 * T)) +
+                       Math.sin(this.toRadians(2 * geomMeanAnomSun)) * (0.019993 - 0.000101 * T) +
+                       Math.sin(this.toRadians(3 * geomMeanAnomSun)) * 0.000289;
+
+    // True Longitude & Apparent Longitude
+    const sunTrueLong = geomMeanLongSun + sunEqOfCtr;
+    const sunAppLong = sunTrueLong - 0.00569 - 0.00478 * Math.sin(this.toRadians(125.04 - 1934.136 * T));
+
+    // Mean Obliquity of the Ecliptic & Obliquity Correction
+    const meanObliqEcliptic = 23 + (26 + (21.448 - T * (46.815 + T * (0.00059 - T * 0.001813))) / 60) / 60;
+    const obliqCorr = meanObliqEcliptic + 0.00256 * Math.cos(this.toRadians(125.04 - 1934.136 * T));
+
+    // Sun Declination
+    const sunDeclin = this.toDegrees(Math.asin(Math.sin(this.toRadians(obliqCorr)) * Math.sin(this.toRadians(sunAppLong))));
+
+    // Equation of Time (minutes)
+    const varY = Math.tan(this.toRadians(obliqCorr / 2)) * Math.tan(this.toRadians(obliqCorr / 2));
+    const eqOfTime = 4 * this.toDegrees(
+      varY * Math.sin(2 * this.toRadians(geomMeanLongSun)) -
+      2 * eccentEarthOrbit * Math.sin(this.toRadians(geomMeanAnomSun)) +
+      4 * eccentEarthOrbit * varY * Math.sin(this.toRadians(geomMeanAnomSun)) * Math.cos(2 * this.toRadians(geomMeanLongSun)) -
+      0.5 * varY * varY * Math.sin(4 * this.toRadians(geomMeanLongSun)) -
+      1.25 * eccentEarthOrbit * eccentEarthOrbit * Math.sin(2 * this.toRadians(geomMeanAnomSun))
+    );
+
+    // True Solar Time & Hour Angle
+    const timeOffset = eqOfTime + 4 * lon - 60 * tzOffsetHours;
+    let trueSolarTime = (hourDecimal * 60 + timeOffset) % 1440;
+    if (trueSolarTime < 0) trueSolarTime += 1440;
+
+    let hourAngle = trueSolarTime / 4 - 180;
+    if (hourAngle < -180) hourAngle += 360;
+
+    // Solar Zenith & Elevation
+    const csz = Math.sin(this.toRadians(lat)) * Math.sin(this.toRadians(sunDeclin)) +
+                Math.cos(this.toRadians(lat)) * Math.cos(this.toRadians(sunDeclin)) * Math.cos(this.toRadians(hourAngle));
+    const zenith = this.toDegrees(Math.acos(Math.max(-1, Math.min(1, csz))));
+    let elevation = 90 - zenith;
+
+    // Atmospheric Refraction Correction
+    if (elevation > 5.0 && elevation < 85.0) {
+      const te = Math.tan(this.toRadians(elevation));
+      const r = (58.1 / te - 0.07 / (te * te * te) + 0.000086 / (te * te * te * te * te)) / 3600;
+      elevation += r;
+    } else if (elevation > -0.575 && elevation <= 5.0) {
+      const r = (1735.0 + elevation * (-518.2 + elevation * (103.4 + elevation * (-12.79 + elevation * 0.711)))) / 3600;
+      elevation += r;
+    }
+
+    // Solar Azimuth (bearing clockwise from true North)
+    let azimuth;
+    const caz = (Math.sin(this.toRadians(sunDeclin)) - Math.sin(this.toRadians(lat)) * Math.cos(this.toRadians(zenith))) /
+                (Math.cos(this.toRadians(lat)) * Math.sin(this.toRadians(zenith)));
+    const azRad = Math.acos(Math.max(-1, Math.min(1, caz)));
+    if (hourAngle > 0) {
+      azimuth = (this.toDegrees(azRad) + 180) % 360;
+    } else {
+      azimuth = (540 - this.toDegrees(azRad)) % 360;
+    }
+
+    return { elevation, azimuth, sunDeclin, eqOfTime };
+  }
+
+  getCardinal(azimuth) {
+    const dirs = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+    const idx = Math.round(azimuth / 22.5) % 16;
+    return dirs[idx];
+  }
+
+  updateMilestones() {
+    const times = this.calcMilestoneTimes(this.currentLat, this.currentLon, this.currentDate);
+
+    if (this.msSunrise) this.msSunrise.textContent = times.sunrise;
+    if (this.msNoon) this.msNoon.textContent = times.noon;
+    if (this.msSunset) this.msSunset.textContent = times.sunset;
+    if (this.msGolden) this.msGolden.textContent = times.golden;
+    if (this.msBlue) this.msBlue.textContent = times.blue;
+  }
+
+  calcMilestoneTimes(lat, lon, date) {
+    // Calculate solar noon, declination, and equation of time at noon
+    const noona = this.calcNOAA(lat, lon, date, 12);
+    const tzOffsetHours = -date.getTimezoneOffset() / 60;
+    const solarNoonHour = (720 - 4 * lon - noona.eqOfTime + 60 * tzOffsetHours) / 60;
+
+    const timeForElevation = (targetElev) => {
+      const csz = Math.sin(this.toRadians(targetElev));
+      const cosHA = (csz - Math.sin(this.toRadians(lat)) * Math.sin(this.toRadians(noona.sunDeclin))) /
+                    (Math.cos(this.toRadians(lat)) * Math.cos(this.toRadians(noona.sunDeclin)));
+      if (cosHA > 1 || cosHA < -1) return null;
+      const haDeg = this.toDegrees(Math.acos(cosHA));
+      const deltaHours = haDeg / 15;
+      return {
+        morning: solarNoonHour - deltaHours,
+        evening: solarNoonHour + deltaHours
+      };
+    };
+
+    const fmt = (h) => {
+      if (h == null || isNaN(h)) return '--:--';
+      let hr = Math.floor(h);
+      let min = Math.round((h - hr) * 60);
+      if (min >= 60) { hr += 1; min = 0; }
+      hr = (hr % 24 + 24) % 24;
+      return `${String(hr).padStart(2, '0')}:${String(min).padStart(2, '0')}`;
+    };
+
+    const sunriseSunset = timeForElevation(-0.833);
+    const blueHour = timeForElevation(-6.0);
+    const goldenStart = timeForElevation(-4.0);
+    const goldenEnd = timeForElevation(6.0);
+
+    return {
+      noon: fmt(solarNoonHour),
+      sunrise: fmt(sunriseSunset?.morning),
+      sunset: fmt(sunriseSunset?.evening),
+      golden: goldenEnd && goldenStart ? `${fmt(goldenEnd.evening)}–${fmt(goldenStart.evening)}` : '--:--',
+      blue: goldenStart && blueHour ? `${fmt(goldenStart.evening)}–${fmt(blueHour.evening)}` : '--:--'
+    };
   }
 
   update(hourDecimal) {
     const h = Math.floor(hourDecimal);
     const m = Math.floor((hourDecimal - h) * 60);
     const timeFormatted = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
-    
+
     if (this.timeLabel) {
       this.timeLabel.textContent = `${timeFormatted} (Simulated Time)`;
     }
 
-    // Mathematical approximation of solar elevation across 24h
-    // Solar noon roughly at 12:30, peak elevation ~52 deg (mid-latitude spring/autumn), nadir ~-48 deg
-    const angleRad = ((hourDecimal - 12.5) / 24) * 2 * Math.PI;
-    const elevation = Math.round(Math.cos(angleRad) * 50 - 2);
+    // Run NOAA Astronomical Calculation for exact latitude, longitude, date and hour
+    const sol = this.calcNOAA(this.currentLat, this.currentLon, this.currentDate, hourDecimal);
+    const elevation = sol.elevation;
+    const azimuth = Math.round(sol.azimuth);
+    const cardinal = this.getCardinal(sol.azimuth);
+    const declinStr = `${sol.sunDeclin >= 0 ? '+' : ''}${sol.sunDeclin.toFixed(1)}°`;
 
     let phase = '';
     let badgeColor = '';
@@ -454,37 +753,41 @@ class SunTimesCalculator {
       phase = 'Night / Astrophotography';
       badgeColor = '#818cf8';
       badgeBg = 'rgba(99, 102, 241, 0.2)';
-      tip = 'Minimal atmospheric glow. Ideal for starry skies, Milky Way captures, long exposures, and urban light trails.';
+      tip = 'Zero solar atmospheric glow. Optimal for Milky Way captures, astrophotography, light painting, and starry deep-sky panoramas.';
     } else if (elevation >= -12 && elevation < -6) {
       phase = 'Nautical Twilight';
       badgeColor = '#38bdf8';
       badgeBg = 'rgba(56, 189, 248, 0.2)';
-      tip = 'Horizon is clearly visible while bright stars still shine. Great for moody architectural and seascape silhouettes.';
+      tip = 'Sea and horizon silhouettes emerge while navigation stars remain clearly visible. Excellent for moody coastal and skyline long exposures.';
     } else if (elevation >= -6 && elevation < -4) {
       phase = 'Blue Hour (-6° to -4°)';
       badgeColor = '#38bdf8';
       badgeBg = 'rgba(56, 189, 248, 0.25)';
-      tip = 'SunTimes hallmark! Rich deep blue sky balancing tungsten city lights. Perfect for architecture and harbor photography without blown highlights.';
+      tip = 'SunTimes hallmark! Rich deep blue sky balancing warm illuminated cityscapes without blown highlight clipping.';
     } else if (elevation >= -4 && elevation <= 6) {
       phase = 'Golden Hour (-4° to +6°)';
       badgeColor = '#f59e0b';
       badgeBg = 'rgba(245, 158, 11, 0.25)';
-      tip = 'Magic hour! Warm low-angle raking sunlight, long soft shadows, natural diffusion, and mountain mist backlight.';
+      tip = 'Photographic magic! Warm low-angle raking sunlight, extended soft shadows, glowing atmospheric backscatter, and mountain alpenglow.';
     } else if (elevation > 6 && elevation <= 25) {
       phase = 'Soft Daytime Light';
       badgeColor = '#10b981';
       badgeBg = 'rgba(16, 185, 129, 0.2)';
-      tip = 'Pleasant directional lighting. Good for portraits with reflectors, street photography, and texture studies.';
+      tip = 'Pleasant directional lighting with moderate contrast. Superb for architectural facades, nature landscapes, and street portraits.';
     } else {
       phase = 'Midday Harsh Sunlight';
       badgeColor = '#94a3b8';
       badgeBg = 'rgba(148, 163, 184, 0.2)';
-      tip = 'High contrast and deep shadows. Use a polarizing filter, look for geometric architectural shadows, or switch to black & white.';
+      tip = 'High contrast overhead sun with stark vertical shadows. Use polarizing / ND filters, seek geometric architectural abstracts, or compose high-contrast B&W.';
     }
 
     if (this.elevationDisplay) {
-      this.elevationDisplay.textContent = `${elevation > 0 ? '+' : ''}${elevation}°`;
+      this.elevationDisplay.textContent = `${elevation >= 0 ? '+' : ''}${elevation.toFixed(1)}°`;
       this.elevationDisplay.style.color = badgeColor;
+    }
+
+    if (this.metricsSub) {
+      this.metricsSub.textContent = `Azimuth: ${azimuth}° (${cardinal}) · Solar Declination: ${declinStr}`;
     }
 
     if (this.phaseBadge) {

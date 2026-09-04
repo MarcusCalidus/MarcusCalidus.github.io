@@ -266,13 +266,42 @@
               <span class="section-eyebrow amber">Where Code Meets Photography</span>
               <h3 style="font-size: 1.6rem; font-weight: 700;">SunTimes Solar Phase Calculator</h3>
               <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                Derived from the NOAA solar math inside my <a href="https://github.com/MarcusCalidus/SunTimes" target="_blank" style="color: var(--amber-light); text-decoration: underline;">SunTimes watchOS complication</a>.
+                Powered by full NOAA astronomical equations derived from my <a href="https://github.com/MarcusCalidus/SunTimes" target="_blank" style="color: var(--amber-light); text-decoration: underline;">SunTimes watchOS complication</a>.
               </p>
             </div>
           </div>
-          <button id="solar-now-btn" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
-            🕒 Use Current Local Time
-          </button>
+        </div>
+
+        <!-- Dynamic Location & Date Toolbar -->
+        <div class="solar-toolbar">
+          <div class="solar-loc-group">
+            <button id="solar-geolocate-btn" class="btn btn-outline solar-geo-btn" title="Detect your location using browser GPS">
+              <span id="solar-geo-icon">📍</span>
+              <span id="solar-geo-text">Detect My Location</span>
+            </button>
+
+            <select id="solar-preset-select" class="solar-select" aria-label="Select location preset">
+              <option value="frankfurt" selected>Frankfurt, Germany (50.1°N, 8.7°E)</option>
+              <option value="berlin">Berlin, Germany (52.5°N, 13.4°E)</option>
+              <option value="zittau">Zittau / Dreiländereck (50.9°N, 14.8°E)</option>
+              <option value="london">London, UK (51.5°N, 0.1°W)</option>
+              <option value="newyork">New York City, USA (40.7°N, 74.0°W)</option>
+              <option value="sanfrancisco">San Francisco, USA (37.8°N, 122.4°W)</option>
+              <option value="tokyo">Tokyo, Japan (35.7°N, 139.7°E)</option>
+              <option value="sydney">Sydney, Australia (33.9°S, 151.2°E)</option>
+            </select>
+
+            <span id="solar-location-badge" class="hero-badge badge-amber" style="font-size: 0.78rem;">
+              50.11°N, 8.68°E
+            </span>
+          </div>
+
+          <div class="solar-date-group">
+            <input type="date" id="solar-date-picker" class="solar-date-input" aria-label="Select calendar date" />
+            <button id="solar-now-btn" class="btn btn-outline" style="font-size: 0.82rem; padding: 0.45rem 0.85rem;" title="Reset to current local time and date">
+              🕒 Current Time
+            </button>
+          </div>
         </div>
 
         <div class="suntimes-calc-grid">
@@ -286,7 +315,31 @@
                 <span id="solar-time-label">18:30 (Simulated Time)</span>
                 <span style="color: var(--text-muted);">00:00 — 24:00</span>
               </div>
-              <input type="range" id="solar-hour-slider" class="solar-slider" min="0" max="24" step="0.25" value="18.5" />
+              <input type="range" id="solar-hour-slider" class="solar-slider" min="0" max="24" step="0.1" value="18.5" />
+            </div>
+
+            <!-- Calculated Solar Milestones -->
+            <div class="solar-milestones" id="solar-milestones">
+              <div class="milestone-item">
+                <span class="milestone-label">🌅 Sunrise</span>
+                <span class="milestone-val" id="ms-sunrise">--:--</span>
+              </div>
+              <div class="milestone-item">
+                <span class="milestone-label">☀️ Solar Noon</span>
+                <span class="milestone-val" id="ms-noon">--:--</span>
+              </div>
+              <div class="milestone-item">
+                <span class="milestone-label">🌇 Sunset</span>
+                <span class="milestone-val" id="ms-sunset">--:--</span>
+              </div>
+              <div class="milestone-item">
+                <span class="milestone-label">✨ Golden Hr</span>
+                <span class="milestone-val" id="ms-golden">--:--</span>
+              </div>
+              <div class="milestone-item">
+                <span class="milestone-label">🌌 Blue Hr</span>
+                <span class="milestone-val" id="ms-blue">--:--</span>
+              </div>
             </div>
 
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; font-size: 0.82rem;">
@@ -298,7 +351,8 @@
 
           <div class="solar-display-card" id="solar-display-card">
             <span class="solar-phase-badge" id="solar-phase-badge">Golden Hour</span>
-            <div class="solar-elevation" id="solar-elevation-display">+3°</div>
+            <div class="solar-elevation" id="solar-elevation-display">+3.0°</div>
+            <div class="solar-metrics-sub" id="solar-metrics-sub">Azimuth: 255° (WSW) · Declination: +7.1°</div>
             <p class="solar-tip" id="solar-tip-display">
               Magic hour! Warm low-angle raking sunlight, long soft shadows, natural diffusion, and mountain mist backlight.
             </p>
